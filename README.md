@@ -8,14 +8,12 @@ A simple React-based web application that fetches and displays current weather c
 - Responsive design with Tailwind CSS styling.
 - Error handling for invalid cities or API issues.
 
-## Prerequisites
-- Node.js (v14.x or later)
-- npm or yarn
+## API
 - An API key from [OpenWeatherMap](https://openweathermap.org/api)
 
-## Installation
+## Tools Used.
+- React.js – for building the user interface
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/weather-app-dashboard.git
-   cd weather-app-dashboard
+- Axios – for making API requests
+
+- Tailwind CSS – for fast and modern styling
