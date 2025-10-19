@@ -26,7 +26,7 @@ function Weather(){
     
     return(
         
-    <div className="weather-App-Dashboard h-screen flex items-center justify-center bg-gray-900 text-white">
+    <div className="weather-App-Dashboard w-150 m-0 mx-100 mt-20 rounded-lg h-300px flex items-center justify-center bg-gray-900 text-white">
       <div className="container mx-auto p-6 bg-gray-800 rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold mb-4 text-center">Weather App Dashboard</h1>
         <div className="flex mb-4">
@@ -39,26 +39,30 @@ function Weather(){
             Search
           </button>
         </div>
-        <div className="container">
-          <div className="top mb-4">
-            <div className="location">
-              <p>{data.name}</p>
+        <div className="container">          
+            <div className="location mb-2 flex" >
+              <h2>City:</h2>
+              <p className='city ml-1 text-blue-500'>{data.name}</p>
             </div>
-            <div className="temp">
-              {data.main ? <h2>{data.main.temp}°C</h2> : null}              
-            </div>
+            <div className="temp flex mb-2">
+              <h2>Temperature:</h2>
+              {data.main ? <p className='temps ml-1 text-blue-500'>{data.main.temp}°F</p> : null}              
+            </div>          
+          <div className="description mb-2 flex">
+            <h2>Weather Codition:</h2>
+            {data.weather ? <p className='condition ml-1 text-blue-500'>{data.weather[0].main}</p> : null}
           </div>
-          <div className="description">
-            {data.weather ? <p>{data.weather[0].main}</p> : null}
+          <div className="feelsLike mb-2 flex">
+            <h2>Pressure:</h2>           
+            {data.main ? <p className='pressure ml-1 text-blue-500'>{data.main.pressure} Pascal</p> : null}
           </div>
-          <div className="feelsLike mb-2">           
-            {data.main ? <p>{data.main.pressure}</p> : null}
+          <div className="humidity mb-2 flex">  
+            <h2>Humidity:</h2>          
+            {data.main ? <p className="humidity ml-1 text-blue-500">{data.main.humidity} %</p> : null}
           </div>
-          <div className="humidity mb-2">            
-            {data.main ? <p className="bold">{data.main.humidity}</p> : null}
-          </div>
-          <div className="wind mb-2">            
-            {data.wind ? <p className="bold">{data.wind.speed}</p> : null}
+          <div className="wind mb-2 flex">  
+            <h2>Winds Speed: </h2>          
+            {data.wind ? <p className="winds ml-1 text-blue-500">{data.wind.speed} Km/hr</p> : null}
           </div>
         </div>
       </div>
